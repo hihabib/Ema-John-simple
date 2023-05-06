@@ -1,0 +1,29 @@
+.card {
+  border: 1px solid #aeaeae;
+  border-radius: 8px;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.cardContent {
+  padding: 3px;
+}
+.card img {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.addToCart {
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  border: 0;
+  padding: 10px;
+  background-color: rgb(255, 224, 179);
+  cursor: pointer;
+  bottom: 0;
+  position: absolute;
+}
+
+.addToCart:hover {
+  background-color: rgb(220, 172, 99);
+}

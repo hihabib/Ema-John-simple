@@ -1,0 +1,11 @@
+.app {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+.app > div:first-child {
+  flex-basis: 80%;
+}
+.app > div:last-child {
+  flex-basis: 20%;
+}
