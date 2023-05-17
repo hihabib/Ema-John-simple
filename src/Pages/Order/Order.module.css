@@ -1,0 +1,48 @@
+.order {
+    display: flex;
+    flex-direction: column;
+    row-gap: 21px;
+}
+.orderItem {
+    border: 2px solid rgb(207, 213, 216);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    margin-top: 20px;
+    width: 60%;
+}
+.orderItem>div:first-child {
+    flex-basis: 80%;
+    display: flex;
+    column-gap: 17px;
+
+}
+.orderItem>div:last-child {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.itemDetails {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+.itemDetails h3{
+    margin: 0;
+}
+.orderItem img {
+    height: 91px;
+    width: 91px;
+}
+.price {
+    color: rgba(255, 153, 0, 1)
+}
+
+.icon svg {
+    cursor: pointer;
+    color: #EB5757;
+    background: rgba(235, 87, 87, 0.3);
+    padding: 15px;
+    border-radius: 50%;
+}

@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import classes from "./Shop.module.css";
+import OrderSummery from "../OrderSummery/OrderSummery.jsx";
 
-export default function Shop({ handleProductSelection }) {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((products) => setProducts(products));
-  }, []);
-
+export default function Shop({ handleProductSelection, products, cart }) {
   return (
+      <>
     <div className={classes.shop}>
       {products.map((product) => (
         <Card
@@ -20,5 +14,7 @@ export default function Shop({ handleProductSelection }) {
         />
       ))}
     </div>
+        <OrderSummery cart={cart} />
+      </>
   );
 }

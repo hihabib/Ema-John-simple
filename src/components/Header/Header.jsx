@@ -1,5 +1,6 @@
 import classes from "./Header.module.css";
 import logo from "../../images/Logo.svg";
+import {Link} from "react-router-dom";
 
 export default function Header() {
   return (
@@ -10,10 +11,21 @@ export default function Header() {
         </div>
         <div className={classes.menu}>
           <ul>
-            <li>Order</li>
-            <li>Order Review</li>
-            <li>Manage Inventory</li>
-            <li>Login</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/order">Order</Link>
+            </li>
+            <li>
+              <Link to="/order-review">Order Review</Link>
+            </li>
+            <li>
+              <Link to="/manage-inventory">Manage Inventory</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
         </div>
       </div>
