@@ -12,6 +12,7 @@ import useOrderLoader from "./loaders/useOrderLoader.js";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {fas} from "@fortawesome/free-solid-svg-icons";
 import {far} from "@fortawesome/free-regular-svg-icons";
+import Checkout from "./Pages/Checkout/Checkout.jsx";
 // ReactDOM.createRoot(document.getElementById('root')).render(
 //   <React.StrictMode>
 //     <App />
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home/>
+                element: <Home/>,
             },
             {
                 path: "/order",
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
                 path: "/login",
                 element: <Login/>
             },
+            {
+                path: "/checkout",
+                element: <Checkout/>
+            }
         ]
     }
 ])

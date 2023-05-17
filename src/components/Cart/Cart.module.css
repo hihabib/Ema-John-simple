@@ -1,0 +1,11 @@
+.clearCart {
+    background-color: #ff3030;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+}
+

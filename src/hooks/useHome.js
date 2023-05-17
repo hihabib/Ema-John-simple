@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {addToDb, getShoppingCart} from "../../utilities/fakedb.js";
+import {addToDb, deleteShoppingCart, getShoppingCart} from "../../utilities/fakedb.js";
 
 const UseHome = () => {
     const [selectedProduct, setSelectedProduct] = useState([]);
@@ -18,6 +18,10 @@ const UseHome = () => {
         addToDb(product.id);
     };
 
+    const removeAllFromCart = () => {
+        setCart([]);
+        deleteShoppingCart()
+    }
     useEffect(() => {
         const storedCartData = getShoppingCart();
         const newCartData = [];
@@ -32,7 +36,7 @@ const UseHome = () => {
         setCart(newCartData);
     }, [products, selectedProduct]);
 
-    return {products, handleProductSelection, cart}
+    return {products, handleProductSelection, cart, removeAllFromCart}
 };
 
 export default UseHome;

@@ -3,7 +3,7 @@ import classes from "./Order.module.css";
 import {useLoaderData} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useState} from "react";
-import {removeFromDb} from "../../../utilities/fakedb.js";
+import {deleteShoppingCart, removeFromDb} from "../../../utilities/fakedb.js";
 
 
 const Order = () => {
@@ -14,11 +14,16 @@ const Order = () => {
         setCart(newCart);
         removeFromDb(id);
     }
+
+    const removeAllFromCart = () => {
+        setCart([]);
+        deleteShoppingCart()
+    }
     return (
         <>
         <div className={classes.order}>
 
-            {cart.map(({id, img, name, price, shipping}) => <div key={id} className={classes.orderItem}>
+            {cart.length ? cart.map(({id, img, name, price, shipping}) => <div key={id} className={classes.orderItem}>
                 <div>
                     <img src={img} alt=""/>
                     <div className={classes.itemDetails}>
@@ -30,11 +35,13 @@ const Order = () => {
                 <div className={classes.icon}>
                     <FontAwesomeIcon onClick={() => handleCart(id)} icon="fa-solid fa-trash-can" />
                 </div>
-            </div>)}
+            </div>) : <h2>There is no item in the cart</h2>}
 
 
         </div>
-            <OrderSummery cart={cart}/>
+            <OrderSummery removeAllFromCart={removeAllFromCart} cart={cart}>
+                <button className={classes.reviewOrder}>Proceed Checkout</button>
+            </OrderSummery>
         </>
     );
 };
