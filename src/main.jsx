@@ -15,6 +15,7 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 import Checkout from "./Pages/Checkout/Checkout.jsx";
 import Register from "./Pages/Register/Register";
 import AuthProvider from "./providers/AuthProvider";
+import PrivateRoute from "./routes/PrivateRoute";
 // ReactDOM.createRoot(document.getElementById('root')).render(
 //   <React.StrictMode>
 //     <App />
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/manage-inventory",
-        element: <ManageInventory />,
+        element: (
+          <PrivateRoute>
+            <ManageInventory />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

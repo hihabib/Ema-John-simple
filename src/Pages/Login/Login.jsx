@@ -5,11 +5,13 @@ import SignInWith from "../../components/SignInWith/SignInWith";
 import Divider from "../../components/Divider/Divider";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 const Login = () => {
   const { signInWithGoogle, user, loading } = useContext(AuthContext);
+  const location = useLocation();
+
   if (!loading && user) {
-    return <Navigate to="/" />;
+    return <Navigate to={location.state?.pathname ?? "/"} />;
   }
   return (
     !loading &&
