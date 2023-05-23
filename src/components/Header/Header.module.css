@@ -1,4 +1,5 @@
-.header, .header a {
+.header,
+.header a {
   background-color: #1c2b35;
   color: white;
   text-decoration: none;
@@ -12,10 +13,16 @@
   justify-content: space-between;
   align-items: center;
 }
+.menu {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
 .menu ul {
   padding: 0;
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 .menu ul li {
   list-style-type: none;

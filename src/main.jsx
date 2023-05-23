@@ -14,6 +14,7 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import Checkout from "./Pages/Checkout/Checkout.jsx";
 import Register from "./Pages/Register/Register";
+import AuthProvider from "./providers/AuthProvider";
 // ReactDOM.createRoot(document.getElementById('root')).render(
 //   <React.StrictMode>
 //     <App />
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <>
+  <AuthProvider>
     <RouterProvider router={router} />
-  </>
+  </AuthProvider>
 );
