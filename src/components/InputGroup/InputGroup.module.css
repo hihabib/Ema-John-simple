@@ -1,0 +1,18 @@
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .inputGroup input {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+  }
+  .inputGroup button {
+    border: none;
+    background-color: #ff99006e;
+    padding: 15px 0;
+    font-size: 20px;
+    margin-top: 30px;
+    border-radius: 3px;
+  }

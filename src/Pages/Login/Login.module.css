@@ -1,0 +1,17 @@
+.login {
+  margin: 100px auto;
+}
+.login > div {
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 25px;
+  width: 350px;
+}
+.login h1 {
+  text-align: center;
+}
+
+.login > div p {
+  text-align: center;
+}
+
