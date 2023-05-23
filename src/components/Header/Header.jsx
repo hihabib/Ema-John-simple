@@ -1,6 +1,6 @@
 import classes from "./Header.module.css";
 import logo from "../../images/Logo.svg";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -25,6 +25,9 @@ export default function Header() {
             </li>
             <li>
               <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/register">Register</Link>
             </li>
           </ul>
         </div>

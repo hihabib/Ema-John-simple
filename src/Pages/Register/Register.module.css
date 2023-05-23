@@ -1,17 +1,17 @@
-.login {
+.register {
   margin: 100px auto;
 }
-.login > div {
+.register > div {
   border: 1px solid gray;
   border-radius: 8px;
   padding: 25px;
-  box-shadow: -10px 10px #ffe0b3;
   width: 350px;
+  box-shadow: -10px 10px #ffe0b3;
 }
-.login h1 {
+.register h1 {
   text-align: center;
 }
 
-.login > div p {
+.register > div p {
   text-align: center;
 }
