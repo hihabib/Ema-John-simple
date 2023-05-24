@@ -3,12 +3,19 @@ import googleLogo from "../../images/google.svg";
 import InputGroup from "../../components/InputGroup/InputGroup";
 import SignInWith from "../../components/SignInWith/SignInWith";
 import Divider from "../../components/Divider/Divider";
-import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
+import useLogin from "./hooks/useLogin";
 const Login = () => {
-  const { signInWithGoogle, user, loading } = useContext(AuthContext);
   const location = useLocation();
+  const {
+    errors,
+    loginData,
+    handleLoginData,
+    userLoginWithEmailAndPassword,
+    signInWithGoogle,
+    user,
+    loading,
+  } = useLogin();
 
   if (!loading && user) {
     return <Navigate to={location.state?.pathname ?? "/"} />;
@@ -19,10 +26,40 @@ const Login = () => {
       <div className={classes.login}>
         <div>
           <h1>Login</h1>
-          <form>
-            <InputGroup label="Email Address" name="email" type="email" />
+          <form onSubmit={userLoginWithEmailAndPassword}>
+            <InputGroup
+              onChange={handleLoginData}
+              label="Email Address"
+              name="email"
+              type="email"
+              value={loginData.email}
+            />
+            <small
+              style={{
+                color: "red",
+                marginbottom: 20,
+                display: "inline-block",
+              }}
+            >
+              {errors.email}
+            </small>
             <br />
-            <InputGroup label="Password" name="password" type="password" />
+            <InputGroup
+              onChange={handleLoginData}
+              label="Password"
+              name="password"
+              type="password"
+              value={loginData.password}
+            />
+            <small
+              style={{
+                color: "red",
+                marginbottom: 20,
+                display: "inline-block",
+              }}
+            >
+              {errors.password}
+            </small>
             <InputGroup label="Login" name="login" type="submit" />
           </form>
           <p>

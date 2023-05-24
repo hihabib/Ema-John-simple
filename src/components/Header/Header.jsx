@@ -1,11 +1,10 @@
 import classes from "./Header.module.css";
 import logo from "../../images/Logo.svg";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
+import useAuth from "../../hooks/useAuth";
 
 export default function Header() {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useAuth();
   return (
     <header className={classes.header}>
       <div>
