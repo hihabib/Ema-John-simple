@@ -1,11 +1,17 @@
 import classes from "./InputGroup.module.css";
-const InputGroup = ({ type, name, label }) => {
+const InputGroup = ({ type, name, label, onChange, value }) => {
   return (
     <div className={classes.inputGroup}>
       {type !== "submit" ? (
         <>
           <label htmlFor={name}>{label}</label>
-          <input type={type} name={name} id={name} />
+          <input
+            onChange={onChange}
+            value={value}
+            type={type}
+            name={name}
+            id={name}
+          />
         </>
       ) : (
         <div className={classes.inputGroup}>

@@ -6,7 +6,6 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 export default function Header() {
   const { user, logOut } = useContext(AuthContext);
-
   return (
     <header className={classes.header}>
       <div>
